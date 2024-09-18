@@ -7,6 +7,7 @@ prenom=input("prenom de l'etudiant : ") #variable prénom
 notes=[]
 notesetcoef=(input('entrer la notes : '), input('entrer le coef : '))
 promo=[]
+nompromo=input('entrer le nom de la promo : ')
 
 ########################################################################
 #                      fonctions
@@ -15,7 +16,8 @@ promo=[]
 
 def etudiant(nom, prenom): #fonction pour creer la liste des étudiants
     listeetudiant=[] #liste tous les étudiants nom + prenom
-    listeetudiant.append([nom,prenom]) #insertion des variables dans la listes
+    for elm in listeetudiant :
+        listeetudiant.append([nom,prenom]) #insertion des variables dans la listes
     #print(listeetudiant) #print debug
     return(listeetudiant)
 
@@ -27,7 +29,7 @@ def ajouternotes(etudiant, notes,notescoef): #creation de la liste des étudiant
 
 def creationpromo(etudiantcoef, listepromo): #creation d'une promo avec les fonction crée précédement
     for elm in etudiantcoef :
-        listepromo.append(etudiantcoef) 
+        listepromo.append(etudiantcoef)
     print(listepromo)
 
 
