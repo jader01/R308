@@ -4,7 +4,7 @@
 
 nom=input("nom de l'etudiant : ") #variable nom
 prenom=input("prenom de l'etudiant : ") #variable prénom
-notes=[]
+notes=[(12,1), (13,4), (16,3)]
 
 ########################################################################
 #                      fonctions
@@ -16,11 +16,9 @@ def etudiant(nom, prenom): #fonction pour creer la liste des étudiants
     listeetudiant.append([nom,prenom]) #insertion des variables dans la listes
     print(listeetudiant) #print debug
 
-def notes(etudiant, notes): #creation de la liste des utiant lier avec les notes
-
-    if etudiant in listeetudiant:
-
-        notes.append([listeetudiant, insertnote, insertcoef])
+def notes(etudiant, notes): #creation de la liste des étudiants lier avec les notes
+    for nom in etudiant :
+        notes.append([etudiant, notes])
     print(notes)
 
 
@@ -28,6 +26,6 @@ def notes(etudiant, notes): #creation de la liste des utiant lier avec les notes
 #                              apl de fonctions
 ################################################################################
 
-etudiant(nom, prenom)
+#etudiant(nom, prenom)
 
-#notes(etudiant())
+notes(etudiant(nom, prenom), notes)
