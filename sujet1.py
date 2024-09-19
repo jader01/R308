@@ -4,9 +4,8 @@
 
 nom=input("nom de l'etudiant : ") #variable nom
 prenom=input("prenom de l'etudiant : ") #variable prénom
-notes=[]
+
 notesetcoef=(input('entrer la notes : '), input('entrer le coef : '))
-promo=[]
 nompromo=input('entrer le nom de la promo : ')
 
 ########################################################################
@@ -14,32 +13,49 @@ nompromo=input('entrer le nom de la promo : ')
 ########################################################################
 
 
-def etudiant(nom, prenom): #fonction pour creer la liste des étudiants
-    listeetudiant=[] #liste tous les étudiants nom + prenom
-    for elm in listeetudiant :
-        listeetudiant.append([nom,prenom]) #insertion des variables dans la listes
-    #print(listeetudiant) #print debug
-    return(listeetudiant)
+def createtudiant(nom, prenom): #fonction pour crée un étudiant
+    etudiant={ #creation du dictionaire dans le quel on stock les étudiants
+        "nom": "name", #nom de l'étudiant a qui on associe une variable pour commencer
+        "prenom" : "firstname" #prénom de l'étudiant au quel on associe la variable pour commencer
+    }
+    etudiant["nom"]=nom #on associe le nom au nom rentré en input au début du programme
+    etudiant["prenom"]=prenom #on associe
+    #print(etudiant) #print 
+    return(etudiant)
 
-def ajouternotes(etudiant, notes,notescoef): #creation de la liste des étudiants lier avec les notes
-    #print(etudiant)
-    notes.append([etudiant, notescoef])
-    #print(notes)
-    return notes
+
+def ajouternotes(etudiant, notesetcoef): #creation de la liste des étudiants lier avec les notes
+    listenotesetudiant={ #on creer la liste dans la quel on va stocker la liste des etudiant avec leur coef
+        "etudiant":"etudiant", 
+        "notesetcoef":(15,2) 
+    }
+
+    listenotesetudiant["etudiant"]=etudiant #ici ont associe l'étudiant de la fonction précédentes
+    listenotesetudiant["notesetcoef"]=notesetcoef #ici ont associe la note et le coef a ce qui a été rentrer en input au debut
+    print(listenotesetudiant)
+    return(listedesetudiant)
 
 def creationpromo(etudiantcoef, listepromo): #creation d'une promo avec les fonction crée précédement
-    for elm in etudiantcoef :
-        listepromo.append(etudiantcoef)
-    print(listepromo)
-
+    promo = {
+        "nom de la promo" : "test",
+        "edutiant de la promo" : "etudiantx"
+    }
+    
+    promo["nom de la promo"]=listeetudiant
+    promo["etudiant de la promo"]=etudiant
+    print(promo)
+    return(promo)
 
 
 ################################################################################
 #                              apl de fonctions
 ################################################################################
 
-#etudiant(nom, prenom)
+etudiant=createtudiant(nom, prenom)
 
-notesetetudiant=ajouternotes(etudiant(nom, prenom), notes, notesetcoef)
+etudiantetnotes=ajouternotes(etudiant, notesetcoef)
 
-creationpromo(notesetetudiant, promo)
+
+#notesetetudiant=ajouternotes(etudiant(nom, prenom), notes, notesetcoef)
+
+#creationpromo(notesetetudiant, promo)
