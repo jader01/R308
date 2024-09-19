@@ -41,8 +41,8 @@ def creationpromo(etudiantcoef, nom): #creation d'une promo avec les fonction cr
         "edutiant de la promo" : "etudiantx"
     }
     
-    promo["nom de la promo"]=etudiantcoef
-    promo["etudiant de la promo"]=nom
+    promo["nom de la promo"]=nom
+    promo["etudiant de la promo"]=etudiantcoef
     print(promo)
     return(promo)
 
