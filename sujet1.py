@@ -32,19 +32,19 @@ def ajouternotes(etudiant, notesetcoef): #creation de la liste des étudiants li
 
     listenotesetudiant["etudiant"]=etudiant #ici ont associe l'étudiant de la fonction précédentes
     listenotesetudiant["notesetcoef"]=notesetcoef #ici ont associe la note et le coef a ce qui a été rentrer en input au debut
-    print(listenotesetudiant)
+    #print(listenotesetudiant)
     return(listedesetudiant)
 
-def creationpromo(etudiantcoef, listepromo): #creation d'une promo avec les fonction crée précédement
-    promo = {
-        "nom de la promo" : "test",
-        "edutiant de la promo" : "etudiantx"
-    }
+#def creationpromo(etudiantcoef, listepromo): #creation d'une promo avec les fonction crée précédement
+    #promo = {
+        #"nom de la promo" : "test",
+        #"edutiant de la promo" : "etudiantx"
+    #}
     
-    promo["nom de la promo"]=listeetudiant
-    promo["etudiant de la promo"]=etudiant
-    print(promo)
-    return(promo)
+    #promo["nom de la promo"]=listeetudiant
+    #promo["etudiant de la promo"]=etudiant
+    #print(promo)
+    #return(promo)
 
 
 ################################################################################
