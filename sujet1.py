@@ -2,11 +2,14 @@
 #                   creation variable
 #####################################################################
 
-nom=input("nom de l'etudiant : ") #variable nom
-prenom=input("prenom de l'etudiant : ") #variable prénom
+#nom="rueda lucantis" #variable nom
+#prenom="jade"#variable prénom
 
-notesetcoef=(input('entrer la notes : '), input('entrer le coef : '))
-nompromo=input('entrer le nom de la promo : ')
+#note=int(14)
+#coef=int(2)
+
+#notesetcoef=(int(input('entrer la notes : ')), int(input('entrer le coef : ')))
+nompromo="but2"
 
 ########################################################################
 #                      fonctions
@@ -14,46 +17,57 @@ nompromo=input('entrer le nom de la promo : ')
 
 
 def createtudiant(nom, prenom): #fonction pour crée un étudiant
+    print("lancement creation etudiant.....")
     etudiant={ #creation du dictionaire dans le quel on stock les étudiants
-        "nom": "name", #nom de l'étudiant a qui on associe une variable pour commencer
-        "prenom" : "firstname" #prénom de l'étudiant au quel on associe la variable pour commencer
+        "nom": nom, #nom de l'étudiant a qui on associe une variable pour commencer
+        "prenom" : prenom, #prénom de l'étudiant au quel on associe la variable pour commencer
+        "notes" : []
     }
-    etudiant["nom"]=nom #on associe le nom au nom rentré en input au début du programme
-    etudiant["prenom"]=prenom #on associe
-    #print(etudiant) #print 
+    #print(etudiant)
+    print("etudiant créée\n")
     return(etudiant)
 
 
-def ajouternotes(etudiant, notesetcoef): #creation de la liste des étudiants lier avec les notes
-    listenotesetudiant={ #on creer la liste dans la quel on va stocker la liste des etudiant avec leur coef
-        "etudiant":"etudiant", 
-        "notesetcoef":(15,2) 
-    }
+def ajouternotes(etudiant, note, coef): #creation de la liste des étudiants lier avec les notes
+    print("ajout des notes de l'étudiant.........")
+    etudiant['notes'].append((note, coef)) #ici on associe la note et le coef rentré précédement a la variable "notes" dans la table étudiant
+    print("etudiant et notes : ", etudiant, "\n")
+    return(etudiant)
 
-    listenotesetudiant["etudiant"]=etudiant #ici ont associe l'étudiant de la fonction précédentes
-    listenotesetudiant["notesetcoef"]=notesetcoef #ici ont associe la note et le coef a ce qui a été rentrer en input au debut
-    #print(listenotesetudiant)
-    return(listenotesetudiant)
+def totalnotes(dico):
+    print("calcul total de note \n")
+    return len(dico["notes"]) #ici on calcule le nombre de notes présente dans le dictionnaire au total, pour ensuite pouvoir calculer la moyenne
+
 
 def creationpromo(etudiantcoef, nom): #creation d'une promo avec les fonction crée précédement
+    print("creation de la promo.................")
     promo = {
         "nom de la promo" : "test",
-        "edutiant de la promo" : "etudiantx"
+        "etudiant de la promo" : []
     }
-    
-    promo["nom de la promo"]=nom
-    promo["etudiant de la promo"]=etudiantcoef
-    print(promo)
+    print("promo créée : ", promo)
     return(promo)
+
+#moyenne
+def fairemoyenne(liste):
+    additionnotes=0
+    addcoef=0
+    for elm in liste['notes']:
+        print("calcule de la moyenne............")
+        #print(elm)
+        addcoef = addcoef + elm[1]
+        additionnotes = additionnotes + (elm[0]*elm[1])
+        print("la moyenne est : ", additionnotes/addcoef, "\n")
+    return additionnotes/addcoef
+
 
 
 ################################################################################
 #                              apl de fonctions
 ################################################################################
 
-etudiant=createtudiant(nom, prenom)
+resultetudiant=createtudiant("rueda lucantis", "jade")
 
-notecoef=ajouternotes(etudiant, notesetcoef)
+notecoef=ajouternotes(resultetudiant, int(15), int(2))
 
-creationpromo(notecoef, nompromo)
-
+fairemoyenne(notecoef)
