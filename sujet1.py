@@ -39,27 +39,30 @@ def totalnotes(dico):
     return len(dico["notes"]) #ici on calcule le nombre de notes présente dans le dictionnaire au total, pour ensuite pouvoir calculer la moyenne
 
 
-def creationpromo(etudiantcoef, nom): #creation d'une promo avec les fonction crée précédement
+def creationpromo(): #creation d'une promo 
     print("creation de la promo.................")
     promo = {
-        "nom de la promo" : "test",
+        "nom de la promo" : "but 2 PILPRO",
         "etudiant de la promo" : []
     }
-    print("promo créée : ", promo)
+    print("promo créée..........")
     return(promo)
 
 #moyenne
-def fairemoyenne(liste):
+def fairemoyenne(liste): # on crrée une fonction de calcule de moyenne avec en paramètre la liste complete généré précédement
     additionnotes=0
     addcoef=0
     for elm in liste['notes']:
         print("calcule de la moyenne............")
-        #print(elm)
         addcoef = addcoef + elm[1]
         additionnotes = additionnotes + (elm[0]*elm[1])
         print("la moyenne est : ", additionnotes/addcoef, "\n")
     return additionnotes/addcoef
 
+def addetudiantpromo(promo, etudiant):
+    print("association de l'étudiant a une promotion")
+    promo["etudiant de la promo"].append(etudiant)
+    print(promo)
 
 
 ################################################################################
@@ -68,6 +71,11 @@ def fairemoyenne(liste):
 
 resultetudiant=createtudiant("rueda lucantis", "jade")
 
-notecoef=ajouternotes(resultetudiant, int(15), int(2))
+etudiantetnotes=ajouternotes(resultetudiant, int(15), int(2))
 
-fairemoyenne(notecoef)
+fairemoyenne(etudiantetnotes)
+
+promo=creationpromo()
+
+addetudiantpromo(promo, etudiantetnotes)
+
