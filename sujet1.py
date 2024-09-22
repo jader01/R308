@@ -1,16 +1,3 @@
-#####################################################################
-#                   creation variable
-#####################################################################
-
-#nom="rueda lucantis" #variable nom
-#prenom="jade"#variable prénom
-
-#note=int(14)
-#coef=int(2)
-
-#notesetcoef=(int(input('entrer la notes : ')), int(input('entrer le coef : ')))
-nompromo="but2"
-
 ########################################################################
 #                      fonctions
 ########################################################################
@@ -48,6 +35,8 @@ def creationpromo(): #creation d'une promo
     print("promo créée..........\n") #print pour vérif
     return(promo)
 
+
+
 #moyenne
 def fairemoyenne(liste): # on crrée une fonction permettant d'effectuer un calcul de moyenne
     additionnotes=0 #varriable à 0 que l'on va utiliser plus tard pour le calcul de moyenn
@@ -58,6 +47,9 @@ def fairemoyenne(liste): # on crrée une fonction permettant d'effectuer un calc
         additionnotes = additionnotes + (elm[0]*elm[1])
         #print("la moyenne est : ", additionnotes/addcoef, "\n") #print pour vérif
     return additionnotes/addcoef
+
+
+
 
 def addetudiantpromo(promo, etudiant): #cette fonction permettra d'ajouter un étudiant a la promotion
     print("association de l'étudiant a une promotion") #print pour vérif
