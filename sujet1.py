@@ -49,14 +49,14 @@ def creationpromo(): #creation d'une promo
     return(promo)
 
 #moyenne
-def fairemoyenne(liste): # on crrée une fonction de calcule de moyenne avec en paramètre la liste complete généré précédement
+def fairemoyenne(liste): # on crrée une fonction permettant d'effectuer un calcul de moyenne
     additionnotes=0 #varriable à 0 que l'on va utiliser plus tard pour le calcul de moyenn
     addcoef=0 #varriable à 0 que l'on va utiliser plus tard pour le calcul de moyenn
     for elm in liste['notes']: #ici on parcours tous les élément dans le dictionnaire étudiant mais on parcours seulement leur 'notes'
         print("calcule de la moyenne............") #print pour vérif
         addcoef = addcoef + elm[1]
         additionnotes = additionnotes + (elm[0]*elm[1])
-        print("la moyenne est : ", additionnotes/addcoef, "\n") #print pour vérif
+        #print("la moyenne est : ", additionnotes/addcoef, "\n") #print pour vérif
     return additionnotes/addcoef
 
 def addetudiantpromo(promo, etudiant): #cette fonction permettra d'ajouter un étudiant a la promotion
@@ -68,21 +68,41 @@ def addetudiantpromo(promo, etudiant): #cette fonction permettra d'ajouter un é
 
 def totalpromo(promo): #cette fonction va parmettre de compter le nomre d'étudiant présent dans une promo
     print("compte du nombre d'étudiant............") #print pour vérif
-    print("il y a : ", len(promo['etudiant de la promo']), "étudiant(s) dans la promo", promo['nom de la promo'])  #print pour vérif de tout les détails souhaiter
+    print("il y a : ", len(promo['etudiant de la promo']), "étudiant(s) dans la promo", promo['nom de la promo'], "\n")  #print pour vérif de tout les détails souhaiter
     return(len(promo['etudiant de la promo'])) #print pour vérif
 
+def moypromo(promo): #cette fonction va permettre de calculer la moyenne de la promotion
+    moyenne = 0
+    print("calcul de la moyenne de la promo ...........;") #print pour vérif
+    totaletudiant=totalpromo(promo) #on apelle la fonction de compte du nombre d'étudiant
+    for elm in promo['etudiant de la promo'] : #on parcours la liste des etudiant
+        moyenne = moyenne + fairemoyenne(elm) #on utilise le calcul de moyenne avec la fonction créée précédement
+    print("la moyenne de la promo est :", moyenne/totaletudiant, "\n") #moyenne final
+    return(moyenne/totaletudiant)
+
+
 ################################################################################
-#                              apl de fonctions
+#                              apl de fonctions prog principal
 ################################################################################
 
-resultetudiant=createtudiant("rueda lucantis", "jade") 
+def main():
+    resultetudiant=createtudiant("rueda lucantis", "jade") 
 
-etudiantetnotes=ajouternotes(resultetudiant, int(15), int(2))
+    etudiantetnotes=ajouternotes(resultetudiant, int(15), int(2))
 
-fairemoyenne(etudiantetnotes)
+    fairemoyenne(etudiantetnotes)
 
-promo=creationpromo()
+    promo=creationpromo()
 
-promocomplette=addetudiantpromo(promo, etudiantetnotes)
+    promocomplette=addetudiantpromo(promo, etudiantetnotes)
 
-totalpromo(promocomplette)
+    #totalpromo(promocomplette)
+
+    moypromo(promocomplette)
+
+
+########################################################################
+#             lancement programme
+###########################################################################
+
+main()
