@@ -5,16 +5,16 @@
 class Etudiant :
 
     def __init__(self, nom, prénom): #on créé la fonction d'initialisation avec en paramètre le nom et et le prénom pour la création d'étudiant
-        print('lancement initialisation')
+        #print('lancement initialisation')
         self.name = nom
         self.firstname = prénom
         self.note = []
-        print("initialisation étudiant : ", nom, prénom, "\n") 
+        #print("initialisation étudiant : ", nom, prénom, "\n") 
 
     def ajoutnotes(self, note, coef): #creation de la fonction initialisation de notes
-        print("ajout de la note")
+        #print("ajout de la note")
         self.note.append((note, coef))
-        print("fin ajout notes la note est ", note, "et le coef", coef, "\n")
+        #print("fin ajout notes la note est ", note, "et le coef", coef, "\n")
         
     def totalnotes(self):
         #print("calcul du total des notes........")
