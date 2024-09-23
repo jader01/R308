@@ -9,36 +9,35 @@ class Etudiant :
         self.name = nom
         self.firstname = prénom
         self.note = []
+        print("initialisation étudiant : ", nom, prénom, "\n") 
 
-    def ajoutnotes(self, note, coef):
-        self.note.append(note, coef)
+    def ajoutnotes(self, note, coef): #creation de la fonction initialisation de notes
+        print("ajout de la note")
+        self.note.append((note, coef))
+        print("fin ajout notes la note est ", note, "et le coef", coef, "\n")
+        
+    def totalnotes(self):
+        #print("calcul du total des notes........")
+        return len(self.note)
+    
+    def fairemoyenne(self):
+        additionnotes=0 #varriable à 0 que l'on va utiliser plus tard pour le calcul de moyenn
+        addcoef=0 #varriable à 0 que l'on va utiliser plus tard pour le calcul de moyenn
+        for elm in self.note: #ici on parcours tous les élément dans le dictionnaire étudiant mais on parcours seulement leur 'notes'
+            print("calcule de la moyenne............") #print pour vérif
+            addcoef = addcoef + elm[1]
+            additionnotes = additionnotes + (elm[0]*elm[1])
+        print("la moyenne de", self.name, self.firstname,  "est : ", additionnotes/addcoef, "\n") #print pour vérif
+        return additionnotes/addcoef
+        
 
 
 
-def ajouternotes(etudiant, note, coef): #creation de la liste des étudiants lier avec les notes
-    print("ajout des notes de l'étudiant.........")#print pour vérif
-    etudiant['notes'].append((note, coef)) #ici on associe la note et le coef rentré précédement a la variable "notes" dans la table étudiant
-    print("etudiant et notes : ", etudiant, "\n")#print pour vérif
-    return(etudiant)
-
-def totalnotes(dico):
-    print("calcul total de note \n")#print pour vérif
-    return len(dico["notes"]) #ici on calcule le nombre de notes présente dans le dictionnaire au total, pour ensuite pouvoir calculer la moyenne
 
 ########################################################################
 #                      classe promo
 ########################################################################
 
-#moyenne
-def fairemoyenne(liste): # on crrée une fonction permettant d'effectuer un calcul de moyenne
-    additionnotes=0 #varriable à 0 que l'on va utiliser plus tard pour le calcul de moyenn
-    addcoef=0 #varriable à 0 que l'on va utiliser plus tard pour le calcul de moyenn
-    for elm in liste['notes']: #ici on parcours tous les élément dans le dictionnaire étudiant mais on parcours seulement leur 'notes'
-        print("calcule de la moyenne............") #print pour vérif
-        addcoef = addcoef + elm[1]
-        additionnotes = additionnotes + (elm[0]*elm[1])
-        #print("la moyenne est : ", additionnotes/addcoef, "\n") #print pour vérif
-    return additionnotes/addcoef
 
 def creationpromo(): #creation d'une promo 
     print("creation de la promo.................") #print pour vérif
@@ -72,4 +71,17 @@ def moypromo(promo): #cette fonction va permettre de calculer la moyenne de la p
     return(moyenne/totaletudiant)
 
 
-Etudiant("Jade", "RUEDA LUCANTIS")
+etudiante1 = Etudiant("Jade", "RUEDA LUCANTIS")
+etudiante2 = Etudiant("Dana", "NELTU")
+etudiante3 =Etudiant("Moon", "MOONY")
+
+etudiante1.ajoutnotes(15, 1)
+etudiante1.ajoutnotes(10, 3)
+
+etudiante2.ajoutnotes(10, 3)
+
+etudiante1.totalnotes()
+etudiante2.totalnotes()
+
+etudiante1.fairemoyenne()
+etudiante2.fairemoyenne()
