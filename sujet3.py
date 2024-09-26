@@ -19,6 +19,12 @@ class LinkedList:
         if self.head is not None:
             self.head.printNode()
         print()
+    
+    def printListeRecRev(self):
+        if self.head is not None:
+            self.head.printNode()
+        print()
+
 
 
 ################################################################################
@@ -41,3 +47,4 @@ myNode3.next = myNode2
 myNode2.next = myNode4
 print("Les elements de la liste : \n")
 myLinkedList.printListRec()
+myLinkedList.printListeRecRev()
