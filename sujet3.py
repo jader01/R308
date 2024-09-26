@@ -19,7 +19,7 @@ class LinkedList:
         if self.head is not None:
             self.head.printNode()
         print()
-        
+
 
 ################################################################################
 #                              apl de fonctions
@@ -30,6 +30,10 @@ myNode1 = Node(10)
 myNode2 = Node(20)
 myNode3 = Node(30)
 myNode4 = Node(40)
+
+#########################################################################
+#                           association de l'odre
+########################################################################
 
 myLinkedList.head = myNode1
 myNode1.next = myNode3
