@@ -21,6 +21,14 @@ class Node:
      alors que dans le print de la fonction inverse, on regarde si quelque chose suis, si ça suis on continue ce qui fait que l'on arrive a la fin et ensuite on print une fois qu'il n'y a plus rien après
      le fait qu'on print quand la suite est vide fait que l'on commence a print par la fin et comme quand ont fait un apelle recurcive ça met en pause les fonction précédentes
      alors on reprend a chaque fin de fonction et ça print en sens inverse """
+    
+    def printcountNode(self, compteur=1): #ici on créé la fonction qui va permettre de compter le nombre de noeud
+        if self.next is not None : #si il y a quelque chose après
+            compteur=compteur+1 #on rajoute un compteur pour rajoteur a chaque fois 
+            self.next.printcountNode(compteur) #ici la fonctoin s'apelle elle meme
+        else :
+            print("\n il y a ",compteur, "element dans la liste") #print de verif
+
 
 
 class LinkedList:
@@ -35,6 +43,11 @@ class LinkedList:
     def printListeRecRev(self): #fonction qui fait le lien avec printNodeRev dans la class Node
         if self.head is not None:
             self.head.printNodeRev()
+        print()
+    
+    def countNodes(self): #fonction de lien avec printcountNode
+        if self.head is not None:
+            self.head.printcountNode()
         print()
 
 
@@ -61,3 +74,4 @@ myNode2.next = myNode4
 print("Les elements de la liste : \n")
 myLinkedList.printListRec()
 myLinkedList.printListeRecRev()
+myLinkedList.countNodes()
