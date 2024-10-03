@@ -1,4 +1,4 @@
-# TP Programmation - README
+# R308 : TP Programmation - README
 
 Ce projet contient quatre programmes Python, chacun correspondant à un sujet de travaux pratiques (TP) ayant pour objectif de renforcer vos compétences en algorithmique, programmation procédurale et orientée objet, ainsi que la manipulation des structures de données dynamiques (SDD).
 
