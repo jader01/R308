@@ -50,10 +50,15 @@ class LinkedList:
             self.head.printcountNode()
         print()
 
+    def addInhead(self, valeur):
+        nouvellevaleur = Node(valeur) #ici ont associe la nouvelle valeur passer en paramètre a une varibale
+        nouvellevaleur.next = self.head #ici le lien entre nouvel élément (nouveau nœud) est lié à l'ancienne tête de la liste comme ont fait dans "association de l'odre" en dessous
+        self.head = nouvellevaleur #ici ont dit que la self.head (la tete de liste, donc le premier element) sera maintant notre nouvelle valeur passer en paramètre
+
 
 
 ################################################################################
-#                              apl de fonctions
+#                    association des valeurs a des variables
 ################################################################################
 
 myLinkedList = LinkedList()
@@ -62,7 +67,7 @@ myNode2 = Node(20)
 myNode3 = Node(30)
 myNode4 = Node(40)
 
-#########################################################################
+########################################################################
 #                           association de l'odre
 ########################################################################
 
@@ -71,7 +76,16 @@ myNode1.next = myNode3
 myNode3.next = myNode2
 myNode2.next = myNode4
 
-print("Les elements de la liste : \n")
+########################################################################
+#                           apl des fonctions
+########################################################################
+
+print("on rajoute  une valeur a la liste............ \n")
+myLinkedList.addInhead(3)
+
+print("Les elements de la liste sont :")
 myLinkedList.printListRec()
 myLinkedList.printListeRecRev()
 myLinkedList.countNodes()
+print("\n")
+
