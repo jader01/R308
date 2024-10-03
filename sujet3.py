@@ -16,7 +16,6 @@ class Node:
         if self.next is not None : #si ont constate que la valeur après n'est pas nul
             self.next.printNodeRev() #alors la fonction s'apelle elle meme
         print(self.data, end= " ") # une fois fini on affiche la data
-
     #la différence entre les deux et que dans la fonction printNode et la fonction prinNodeRev :
     #dans un premier temps on affiche et en ensuite on regarde si une info suis
     #alors que dans le print de la fonction inverse, on regarde si quelque chose suis, si ça suis on continue ce qui fait que l'on arrive a la fin et ensuite on print une fois qu'il n'y a plus rien après
