@@ -10,7 +10,7 @@ L'objectif de ce premier TP est de faire un rappel de vos compétences en algori
 - Structures de contrôle (tests, boucles, structures imbriquées)
 - Sous-programmes (fonctions avec passage de paramètres, retour de résultat, visibilité des variables)
 - Traduction d'un algorithme en Python
-- Compilation, correction et test d'un programme
+- correction et test d'un programme
 
 ## Programmes
 
