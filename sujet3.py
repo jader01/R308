@@ -16,11 +16,11 @@ class Node:
         if self.next is not None : #si ont constate que la valeur après n'est pas nul
             self.next.printNodeRev() #alors la fonction s'apelle elle meme
         print(self.data, end= " ") # une fois fini on affiche la data
-    """la différence entre les deux et que dans la fonction printNode et la fonction prinNodeRev :
-    dans un premier temps on affiche et en ensuite on regarde si une info suis
-     alors que dans le print de la fonction inverse, on regarde si quelque chose suis, si ça suis on continue ce qui fait que l'on arrive a la fin et ensuite on print une fois qu'il n'y a plus rien après
-     le fait qu'on print quand la suite est vide fait que l'on commence a print par la fin et comme quand ont fait un apelle recurcive ça met en pause les fonction précédentes
-     alors on reprend a chaque fin de fonction et ça print en sens inverse """
+    #la différence entre les deux et que dans la fonction printNode et la fonction prinNodeRev :
+    #dans un premier temps on affiche et en ensuite on regarde si une info suis
+    #alors que dans le print de la fonction inverse, on regarde si quelque chose suis, si ça suis on continue ce qui fait que l'on arrive a la fin et ensuite on print une fois qu'il n'y a plus rien après
+    #le fait qu'on print quand la suite est vide fait que l'on commence a print par la fin et comme quand ont fait un apelle recurcive ça met en pause les fonction précédentes
+    #alors on reprend a chaque fin de fonction et ça print en sens inverse """
     
     def printcountNode(self, compteur=1): #ici on créé la fonction qui va permettre de compter le nombre de noeud
         if self.next is not None : #si il y a quelque chose après
@@ -88,4 +88,3 @@ myLinkedList.printListRec()
 myLinkedList.printListeRecRev()
 myLinkedList.countNodes()
 print("\n")
-
